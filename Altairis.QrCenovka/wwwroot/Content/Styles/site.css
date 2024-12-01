@@ -1,0 +1,127 @@
+﻿/* General layout */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #666;
+}
+
+body {
+    background-color: #fff;
+    max-width: 900px;
+    padding: 1em;
+    margin: 1em auto;
+    border-radius: 5px;
+}
+
+    body > header > h1 {
+        font-size: 180%;
+        font-weight: 100;
+        color: #000;
+        margin-top: 0;
+        padding-bottom: 1ex;
+        border-bottom: 1px solid #eee;
+    }
+
+        body > header > h1 a {
+            color: #000 !important;
+            text-decoration: none;
+        }
+
+    body > footer {
+        font-size: 80%;
+        color: #999;
+        border-top: 1px solid #eee;
+        padding-top: 1ex;
+        margin-top: 2em;
+        text-align: right;
+    }
+
+h2 {
+    font-size: 140%;
+    font-weight: 400;
+    color: #000;
+}
+
+h3 {
+    font-size: 120%;
+    font-weight: 400;
+    color: #000;
+}
+
+a:link, a:visited {
+    color: #09c;
+}
+
+a:hover, a:active {
+    color: #c00;
+}
+
+/* Forms */
+
+fieldset {
+    margin: 1em 0;
+    padding: 0 1em 1em 1em;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin: 1em 0 0.25em;
+}
+
+input, select, textarea {
+    display: block;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    font-size: 16px;
+    padding: 0.25em .5em;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+textarea {
+    height: 10em;
+    resize: vertical;
+}
+
+    input::placeholder, textarea::placeholder {
+        color: #999;
+    }
+
+.description {
+    font-size: 80%;
+    color: #666;
+    margin: 0;
+}
+
+button {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    font-size: 24px;
+    padding: .5em 1.5em;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #e0e0e0;
+    }
+
+.validation-summary-errors {
+    color: #c00;
+    background-color: #fdd;
+    border: 1px solid #c00;
+    padding: 0.5em;
+    margin: 1em 0;
+}

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Altairis.ValidationToolkit" Version="4.1.2" />
+    <PackageReference Include="IbanNet" Version="5.16.1" />
+    <PackageReference Include="Net.Codecrete.QrCodeGenerator" Version="2.0.5" />
+    <PackageReference Include="QuestPDF" Version="2024.10.4" />
+  </ItemGroup>
+
+</Project>

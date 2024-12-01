@@ -1,0 +1,51 @@
+﻿@page
+@model Altairis.QrCenovka.Pages.IndexModel
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>QR Cenovka</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Styles/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <h1>QR Cenovka</h1>
+    </header>
+    <main>
+        <p>Tato aplikace slouží k vytvoření cenovek obsahujících kód pro přímou QR platbu. Každá položka může mít svůj variabilní symbol, nebo může být společný, nebo nemusí být zadán vůbec. Výsledkem bude PDF se stránkami A4, z nichž každá bude obsahovat 4 nebo 8 cenovek.</p>
+        <form method="post">
+            <fieldset>
+                <legend>Platební údaje</legend>
+                <div>
+                    <label asp-for="Input.AccountNumber">Číslo účtu a kód banky:</label>
+                    <input asp-for="Input.AccountNumber" placeholder="00000000/0000" />
+                </div>
+                <div>
+                    <label asp-for="Input.VarSymbol">Variabilní symbol (nepovinný):</label>
+                    <input asp-for="Input.VarSymbol" />
+                    <div class="description">Variabilní symbol, který se použije, pokud není přímo u položky uveden jiný.</div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Vzhled</legend>
+                <div>
+                    <label asp-for="Input.Format">Formát:</label>
+                    <select asp-for="Input.Format">
+                        <option value="A6">A6 (4 cenovky na stránku A4 na šířku)</option>
+                        <option value="A7">A7 (8 cenovek na stránku A4 na výšku)</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Položky</legend>
+                <p>Každá položka na jeden řádek. Každý řádek musí obsahovat název položky, cenu v Kč (použijte desetinnou čárku) a volitelně variabilní symbol, oddělený tabulátorem nebo středníkem. Může být zadáno 1-100 položek.</p>
+                <textarea asp-for="Input.Items" placeholder="Položka 1;99,90&#13;&#10;Položka 2;50;123456"></textarea>
+            </fieldset>
+            <div asp-validation-summary="All"></div>
+            <div style="text-align:center">
+                <button type="submit">Vytvořit PDF</button>
+            </div>
+        </form>
+    </main>
+    <footer>Copyright &copy; <a href="https://www.altair.blog/">Michal Altair Valášek</a>, 2024</footer>
+</body>
+</html>
