@@ -32,7 +32,7 @@ public class IndexModel : PageModel {
         if (!this.ModelState.IsValid) return this.Page();
 
         // Generate price tag data
-        var items = PriceTagInfo.Generate(this.Input.AccountNumber, this.Input.VarSymbol, this.Input.Items);
+        var items = PriceTagInfo.Generate(this.Input.AccountNumber, this.Input.VarSymbol, this.Input.Items).Take(100);
 
         // Prepare the right document type
         var doc = this.Input.Format switch {
