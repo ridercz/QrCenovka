@@ -36,7 +36,7 @@ public record struct PriceTagInfo(string Name, decimal Price, string QrCodeData)
             }
 
             // Generate QR code data
-            var qrCodeData = $"SPD*1.0*ACC:{iban}*AM:{price.ToString("0.00", CultureInfo.InvariantCulture)}*CC:CZK";
+            var qrCodeData = $"SPD*1.0*ACC:{iban}*AM:{price.ToString("0.00", CultureInfo.InvariantCulture)}*CC:CZK*PT:IP";
             if (!string.IsNullOrWhiteSpace(varSymbol)) qrCodeData += $"*X-VS:{varSymbol}";
 
             // Return result
